@@ -1,0 +1,30 @@
+<main>
+  <section class="main-section">
+    <h2>Appointments</h2>
+    <ul *ngIf="appointments.length; else noAppointments">
+      <li *ngFor="let appointment of appointments">
+        {{ appointment.dateTime | date: 'fullDate' }} - {{ appointment.reason }}
+        <button class="btn-delete" (click)="confirmDeletion(appointment.id)">Delete</button>
+      </li>
+    </ul>
+    <ng-template #noAppointments>
+      <p>No appointments found.</p>
+    </ng-template>
+  </section>
+  <section class="form-section">
+    <h2>Schedule a New Appointment</h2>
+    <form #appointmentForm="ngForm" (ngSubmit)="onSubmit(appointmentForm)">
+      <label for="dateTime">Date and Time:</label>
+      <input id="dateTime" type="datetime-local" name="dateTime" [(ngModel)]="newAppointment.dateTime" required>
+      <label for="reason">Reason:</label>
+      <input id="reason" type="text" name="reason" [(ngModel)]="newAppointment.reason" required minlength="3">
+      <button class="btn-primary" type="submit" [disabled]="!appointmentForm.valid">Schedule</button>
+    </form>
+    <div class="btn-wrapper">
+      <button class="btn-secondary" (click)="logout()">Logout</button>
+    </div>
+  </section>
+</main>
+
+
+

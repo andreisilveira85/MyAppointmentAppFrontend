@@ -1,0 +1,83 @@
+@import "../../../styles/variables.scss";
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: $gray-bg; 
+}
+
+.main-section, .form-section {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: $gray-secondary-bg; 
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: $secondary-color; 
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+li {
+    background-color: $gray-secondary-bg; 
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    color: $text-color; 
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: $primary-color; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button.btn-secondary {
+    background-color: $secondary-color; 
+}
+
+input[type="datetime-local"], input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white; 
+    color: $text-color; 
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.btn-delete {
+    background-color: #ff6b6b; 
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
